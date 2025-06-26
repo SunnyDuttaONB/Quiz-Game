@@ -13,7 +13,6 @@ const maxScoreSpan = document.getElementById("max-score");
 const resultMessage = document.getElementById("result-message");
 const restartButton = document.getElementById("restart-btn");
 const progressBar = document.getElementById("progress");
-// Questions Array
 
 const quizQuestions = [
   {
@@ -134,7 +133,7 @@ function selectAnswer(event) {
     }
   });
 
-   if (isCorrect) {
+  if (isCorrect) {
     score++;
     scoreSpan.textContent = score;
   }
@@ -142,13 +141,13 @@ function selectAnswer(event) {
   setTimeout(() => {
     currentQuestionIndex++;
 
-     // check if there are more questions or if the quiz is over
+    // check if there are more questions or if the quiz is over
     if (currentQuestionIndex < quizQuestions.length) {
       showQuestion();
     } else {
       showResults();
     }
-  }, 1000); // 1 second delay before showing the next question or results);
+  }, 1000);
 }
 
 function showResults() {
@@ -173,7 +172,7 @@ function showResults() {
 }
 
 function restartQuiz() {
-    resultScreen.classList.remove("active");
+  resultScreen.classList.remove("active");
 
-    startQuiz();
+  startQuiz();
 }
